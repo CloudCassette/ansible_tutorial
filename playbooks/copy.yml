@@ -1,0 +1,13 @@
+---
+- name: Copy file from local to remote clients
+  hosts: all
+
+  tasks:
+  - name: Copying file
+    become: false
+    copy: 
+     src: /home/work/some.cfg
+     dest: /tmp
+     owner: cloudcassette
+     group: cloudcassette
+     mode: 0644
